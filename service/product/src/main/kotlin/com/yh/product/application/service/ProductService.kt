@@ -9,6 +9,7 @@ import com.yh.product.domain.ProductPageResult
 import com.yh.product.domain.ProductResult
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import kotlin.math.log
 
 
 @Service
@@ -24,9 +25,12 @@ class ProductService(
 
     @Transactional(readOnly = true)
     override fun readAll(categoryId: Long, page: Long, pageSize: Long): ProductPageResult {
+
         return ProductPageResult(
-            products = readProductPort.findAll(categoryId,
-                offset = (page - 1) * pageSize, limit = pageSize).map {
+            products = readProductPort.findAll(
+                categoryId = categoryId,
+                offset = (page - 1) * pageSize,
+                limit = pageSize).map {
                     ProductResult(
                         productId = it.productId,
                         categoryId = it.categoryId,

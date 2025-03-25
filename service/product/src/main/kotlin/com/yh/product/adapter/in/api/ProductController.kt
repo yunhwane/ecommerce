@@ -60,7 +60,7 @@ class ProductController (
                 meta = Meta(
                     count = result.count
                 ),
-                data = result.products.map {
+                products = result.products.map {
                     ProductResponse(
                         categoryId = it.categoryId,
                         productId = it.productId,

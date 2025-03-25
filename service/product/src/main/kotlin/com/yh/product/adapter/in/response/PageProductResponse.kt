@@ -3,8 +3,8 @@ package com.yh.product.adapter.`in`.response
 import java.time.LocalDateTime
 
 data class PageProductResponse(
-    private val meta: Meta,
-    private val data: List<ProductResponse>
+    val meta: Meta,
+    val products: List<ProductResponse>
 )
 
 data class ProductResponse(
