@@ -1,11 +1,11 @@
-package com.yh.ecommerce
+package com.yh.product
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class EcommerceApplication
+class ProductApplication
 
 fun main(args: Array<String>) {
-    runApplication<EcommerceApplication>(*args)
+    runApplication<ProductApplication>(*args)
 }
