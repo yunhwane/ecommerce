@@ -1,4 +1,4 @@
-package com.yh.product.port.`in`
+package com.yh.product.application.port.`in`
 
 import com.yh.product.domain.SaveProductResult
 

@@ -1,9 +1,9 @@
-package com.yh.product.port.`in`
+package com.yh.product.application.port.`in`
 
 data class SaveProductCommand (
     val name: String,
+    val categoryId: Long,
     val price: Int,
-    val stock: Int,
     val discountRate: Int
 ){
 }

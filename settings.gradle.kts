@@ -2,6 +2,7 @@ rootProject.name = "ecommerce"
 
 include(
     "service:product",
+    "common:snowflake",
 )
 
 pluginManagement {
