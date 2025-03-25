@@ -2,7 +2,7 @@ package com.yh.product.domain
 
 import java.time.LocalDateTime
 
-data class SaveProductResult (
+data class ProductResult (
     val categoryId: Long,
     val productId: Long,
     val name: String,

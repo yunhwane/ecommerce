@@ -18,5 +18,15 @@ interface ProductRepository : JpaRepository<ProductEntity, Long> {
             ) t left join product on t.product_id = product.product_id
         """, nativeQuery = true
     )
-    fun findAll(@Param("categoryId") categoryId: Long, @Param("limit") limit: Int, @Param("offset") offset: Int): List<ProductEntity>
+    fun findAll(@Param("categoryId") categoryId: Long, @Param("offset") offset: Long, @Param("limit") limit: Long): List<ProductEntity>
+
+    @Query(
+        value ="""
+            select count(*) from (
+                select product_id from product
+                where category_id = :categoryId limit :limit
+            ) t
+        """, nativeQuery = true
+    )
+    fun count(@Param("categoryId") categoryId: Long, @Param("limit") limit: Long): Long
 }
